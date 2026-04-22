@@ -2,16 +2,13 @@ import os
 from dotenv import load_dotenv
 from google.adk.agents import LlmAgent
 
-# 1. Load the API Key from your .env file
 load_dotenv()
 
-# 2. Define a specialized tool (Optional: proves your M.Tech skills)
 def ai_market_insight(topic: str):
     """Fetches specialized 2026 AI trends for a specific topic."""
     return f"In 2026, {topic} is pivoting toward autonomous agentic reasoning and edge-deployment."
 
-# 3. Create the Agent
-# We use 'my_agent' as the variable name to avoid any confusion with filenames
+
 my_agent = LlmAgent(
     name="Nova_Consultant_Pro",
     model="gemini-2.5-flash",
@@ -33,8 +30,7 @@ my_agent = LlmAgent(
     tools=[ai_market_insight]
 )
 
-# 4. THE MOST IMPORTANT PART:
-# The Google ADK dashboard ONLY looks for a variable named 'root_agent'.
+
 root_agent = my_agent
 
 if __name__ == "__main__":

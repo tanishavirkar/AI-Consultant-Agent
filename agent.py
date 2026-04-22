@@ -2,16 +2,12 @@ import os
 from dotenv import load_dotenv
 from google.adk.agents import LlmAgent
 
-# 1. Load API Key from your .env file
 load_dotenv()
 
-# 2. Define your specialized tools (Optional but makes it a 'Real' product)
 def market_analysis_tool(industry: str):
     """Analyzes market trends for a specific industry in 2026."""
     return f"Latest 2026 data for {industry}: 30% growth in agentic workflows and decentralized AI."
 
-# 3. Initialize the AI Consultant Agent
-# We are naming it uniquely so it stands out on your GitHub profile
 ai_consultant_agent = LlmAgent(
     name="Nova_Consultant_Pro",
     model="gemini-2.5-flash",
@@ -35,8 +31,7 @@ ai_consultant_agent = LlmAgent(
     tools=[market_analysis_tool]
 )
 
-# 4. CRITICAL: Export for the ADK Dashboard
-# This variable name 'root_agent' is exactly what the dashboard looks for
+
 root_agent = ai_consultant_agent
 
 if __name__ == "__main__":
